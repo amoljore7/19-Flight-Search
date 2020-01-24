@@ -49,8 +49,3 @@
   animation: Item-logo-spin infinite 20s linear;
   height: 128px;
 }
-
-keyframes Item-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
