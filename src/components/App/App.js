@@ -146,7 +146,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Flight Search Engine</h2>
+          <h2>Flight Search</h2>
         </div>
         <div className="container">
           <div className="one-third column">
