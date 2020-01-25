@@ -21,7 +21,6 @@ class App extends Component {
       retDate: '',
       passengerCount: 1,
       items: [],
-      active: false
     };
     moment.updateLocale('en', {
       calendar: {
@@ -42,13 +41,11 @@ class App extends Component {
       console.log("Data Feched Succesfully")
       this.setState({
         items: res,
-        active:true
       })
     } else {
       alert("Data Not Feched...")
     }
   }
-
   handleChangeSlider = (obj) => {
 
     this.setState({
@@ -147,8 +144,11 @@ class App extends Component {
           <h5> {this.state.originCity} > {this.state.destCity} </h5>
         </div>
     }
+
     return (
-      <div className="App"> 
+      <span>
+        {this.state.items.length ?
+          <div className="App">
             <div className="App-header">
               <h2>Flight Search</h2>
             </div>
@@ -222,8 +222,13 @@ class App extends Component {
                 </main>
               </div>
             </div>
-         
-      </div>
+          </div>
+          :
+          <div className="App">
+            <div className="App-header">
+              <h2 style={{ color: 'red' }}>Wait Data Feching In Process ...</h2>
+            </div></div>}
+      </span>
     );
   }
 }
