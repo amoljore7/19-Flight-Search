@@ -8,7 +8,7 @@ import { items } from '../../data/data';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import FlightSlider from '../FlightSlider/flightSlider';
-
+import APIConfig from '../../JSON_file/urls.json'
 class App extends Component {
 
   constructor(props) {
@@ -28,6 +28,21 @@ class App extends Component {
       }
     });
   }
+
+async componentDidMount(){
+ const response = await fetch(APIConfig.configUrl.flight_get_data, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'Application/JSON'
+          },
+        })
+        const res =  await response.json();
+        if(res){
+          console.log("Data Feched comming")
+        }else{
+          alert("Data Not Feched...")
+        }
+}
 
   handleChangeSlider = (obj) => {
 
