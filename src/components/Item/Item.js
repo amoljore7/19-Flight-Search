@@ -3,7 +3,7 @@ import React from 'react';
 import './Item.css';
 import logo from './ItemLogo.svg';
 
-let Item = ({ item, children }) => (
+let Item = ({ item }) => (
   <div className="Item">
     <div className="Item-left">
         <h5>Rs. {item.price}</h5>
@@ -17,22 +17,19 @@ let Item = ({ item, children }) => (
       <div className="Item-image" >
         <img src={logo} className="Item-logo" alt="logo" />
       </div>
-      <button className="Item-book" onClick={item.onClickHandler} type="submit">
-        Book this flight
-      </button>
-      {children}
+      <button className="Item-book" onClick={item.onClickHandler}>Book this flight</button>
     </div>
   </div>
 )
 
-Item.onClickHandler =  (event) => {
+Item.onClickHandler = (event) => {
+  console.log("Booked")
   alert("Flight booked successfully :)")
   event.preventDefault();
 }
 
 Item.propTypes = {
   item: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node
 };
 
 export default Item;
