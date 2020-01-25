@@ -22,8 +22,6 @@ class App extends Component {
       passengerCount: 1,
       items: items
     };
-
-
     moment.updateLocale('en', {
       calendar: {
         sameElse: 'Do MMM YYYY'
