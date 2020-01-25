@@ -1,7 +1,7 @@
 import React from 'react'
 import Tooltip from 'rc-slider/assets/index.css'
 import Slider from 'rc-slider';
-
+const style = { margin: 15 };
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -28,7 +28,7 @@ class CustSlider extends React.Component {
 
   render() {
     return (
-      <div style={{ margin: 15 }}>
+      <div style={style}>
         <Range allowCross={false} value={this.state.value} onChange={this.onSliderChange}  tipFormatter={value => `${value*100}`} />
       </div>
     );

@@ -205,7 +205,8 @@ class App extends Component {
             <main>
             <ItemPage
               items={this.state.items}
-              onAddToCart={this.handleAddToCart} />
+              // onAddToCart={this.handleAddToCart}
+               />
     	      </main>
           </div>
         </div>

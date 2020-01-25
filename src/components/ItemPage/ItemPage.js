@@ -2,15 +2,19 @@
 import React from 'react';
 import Item from '../Item/Item';
 import './ItemPage.css';
+import Flight from '../Item/Item';
 
 function ItemPage({ items }) {
   let length = items.length;
+  
+
   if(length > 0) {
     return (
       <ul className="ItemPage-items">
         {items.map(item =>
           <li key={item.id} className="ItemPage-item">
-            <Item item={item} />
+            
+            <Flight item={item} />
           </li>
         )}
       </ul>
