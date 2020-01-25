@@ -23,16 +23,6 @@ class App extends Component {
         items: items
       };
 
-      this.handleChangeDestCity = this.handleChangeDestCity.bind(this);
-      this.handleChangeOriginCity = this.handleChangeOriginCity.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-      this.handleSelect = this.handleSelect.bind(this);
-      this.handlePassengerCountChange = this.handlePassengerCountChange.bind(this);
-      this.handleStartDateChange = this.handleStartDateChange.bind(this);
-      this.handleEndDateChange = this.handleEndDateChange.bind(this);
-      this.handleChangeSlider = this.handleChangeSlider.bind(this);
-      this.findByMatchingProperties = this.findByMatchingProperties.bind(this);
-      this.filterByPrice = this.filterByPrice.bind(this);
 
       moment.updateLocale('en', {
         calendar : {
@@ -41,7 +31,7 @@ class App extends Component {
       });
   }
 
-  handleChangeSlider(obj) {
+  handleChangeSlider=(obj)=> {
 
     this.setState({
         sliderRangeObj: obj
@@ -60,11 +50,11 @@ class App extends Component {
     });
   }
 
-  filterByPrice (item) {
+  filterByPrice=(item)=>{
       return (item.price >= this.state.sliderRangeObj.lowerBound && item.price <= this.state.sliderRangeObj.upperBound);
   }
 
-  handleChangeOriginCity(event) {
+  handleChangeOriginCity=(event)=> {
       const objToMatch = {
         originCity: event.target.value
       };
@@ -78,7 +68,7 @@ class App extends Component {
       }
   }
 
-  handleChangeDestCity(event) {
+  handleChangeDestCity=(event)=> {
       const destCity = event.target.value ? event.target.value : "";
       const objToMatch = {
         originCity: this.state.originCity,
@@ -95,28 +85,28 @@ class App extends Component {
       }
   }
 
-  handleSubmit(event) {
+  handleSubmit=(event)=> {
     alert("Results filtered");
     event.preventDefault();
   }
 
-  handleSelect(index, last) {
+  handleSelect=(index, last)=> {
     this.setState({
       selectedTab: index
     });
   }
 
-  handlePassengerCountChange(event) {
+  handlePassengerCountChange=(event)=>{
       this.setState({passengerCount: event.target.value});
   }
 
-  handleStartDateChange(date) {
+  handleStartDateChange=(date)=> {
     this.setState({
       startDate: date
     });
   }
 
-  findByMatchingProperties(arrObj, matchingObj) {
+  findByMatchingProperties=(arrObj, matchingObj)=> {
       return arrObj.filter(function (entry) {
           return Object.keys(matchingObj).every(function (key) {
               return (entry[key].toUpperCase().indexOf(matchingObj[key].toUpperCase()) === 0);
@@ -124,7 +114,7 @@ class App extends Component {
       });
   }
 
-  handleEndDateChange(date) {
+  handleEndDateChange=(date)=>{
     this.setState({
       endDate: date
     });
