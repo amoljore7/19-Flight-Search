@@ -10,7 +10,6 @@ function ItemPage({ items }) {
       <ul className="ItemPage-items">
         {items.map(item =>
           <li key={item.id} className="ItemPage-item">
-            {console.log(">>>Chekoint>>>",item)}
             <Item item={item} />
           </li>
         )}

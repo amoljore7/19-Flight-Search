@@ -1,9 +1,8 @@
+import React from 'react'
+import Tooltip from 'rc-slider/assets/index.css'
+import Slider from 'rc-slider';
 
-require('rc-slider/assets/index.css');
 
-const React = require('react');
-const Slider = require('rc-slider');
-const Tooltip = require('rc-tooltip');
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
 const Handle = Slider.Handle;
@@ -33,7 +32,7 @@ class CustSlider extends React.Component {
       value: [0, 100]
     };
   }
-
+    
   onLowerBoundChange = (e) => {
     this.setState({ lowerBound: +e.target.value });
   }

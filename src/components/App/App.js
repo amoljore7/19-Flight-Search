@@ -44,7 +44,6 @@ class App extends Component {
 
     let filteredData = this.findByMatchingProperties(items, objToMatch);
     filteredData = filteredData.filter(this.filterByPrice);
-
     this.setState({
         items: filteredData
     });

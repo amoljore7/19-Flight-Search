@@ -23,7 +23,6 @@ let Item = ({ item }) => (
 )
 
 Item.onClickHandler = (event) => {
-  console.log("Booked")
   alert("Flight booked successfully :)")
   event.preventDefault();
 }
