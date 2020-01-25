@@ -3,14 +3,14 @@ import React from 'react';
 import './flightPage.css';
 import Flight from '../flight/flight';
 
-function FlightPage({ items }) {
-  let length = items.length;
+function FlightPage({ flightItems }) {
+  let length = flightItems.length;
 
 
   if (length > 0) {
     return (
       <ul className="ItemPage-items">
-        {items.map(item =>
+        {flightItems.map(item =>
           <li key={item.id} className="ItemPage-item">
             <Flight item={item} />
           </li>
@@ -29,7 +29,7 @@ function FlightPage({ items }) {
 
 }
 FlightPage.propTypes = {
-  items: React.PropTypes.array.isRequired
+  flightItems: React.PropTypes.array.isRequired
 };
 
 export default FlightPage;
