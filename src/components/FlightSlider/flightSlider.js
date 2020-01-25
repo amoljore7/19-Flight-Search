@@ -6,7 +6,7 @@ const style = { margin: 15 };
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
 
-class CustSlider extends React.Component {
+class FlightSlider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,8 +35,8 @@ class CustSlider extends React.Component {
   }
 }
 
-CustSlider.propTypes = {
+FlightSlider.propTypes = {
   onChange: React.PropTypes.func
 };
 
-export default CustSlider;
+export default FlightSlider;
