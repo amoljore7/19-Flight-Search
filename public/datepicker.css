@@ -117,9 +117,9 @@
       .react-datepicker__navigation--years-upcoming:hover {
         border-bottom-color: #b3b3b3; }
 
-.react-datepicker__month-container {
+/* .react-datepicker__month-container {
   display: inline;
-  float: left; }
+  float: left; } */
 
 .react-datepicker__month {
   margin: 0.4rem;
