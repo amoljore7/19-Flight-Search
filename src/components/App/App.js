@@ -155,7 +155,7 @@ class App extends Component {
                             selected={this.state.startDate}
                             onChange={this.handleStartDateChange}
                             minDate={moment()}
-                            maxDate={moment().add(90, "days")}
+                            maxDate={moment().add(30, "days")}
                                 placeholderText="Departure Date" />
                         <input className="row" type="text" value={this.state.passengerCount} onChange={this.handlePassengerCountChange} placeholder="Passengers"/>
                       <input type="submit" value="Search" />
@@ -172,13 +172,13 @@ class App extends Component {
                             selected={this.state.startDate}
                             onChange={this.handleStartDateChange}
                             minDate={moment()}
-                            maxDate={moment().add(90, "days")}
+                            maxDate={moment().add(30, "days")}
                                 placeholderText="Departure Date" />
                         <DatePicker
                             selected={this.state.endDate}
                             onChange={this.handleEndDateChange}
                             minDate={moment()}
-                            maxDate={moment().add(90, "days")}
+                            maxDate={moment().add(30, "days")}
                                 placeholderText="Return Date" />
                         <input className="row" type="text" value={this.state.passengerCount} onChange={this.handlePassengerCountChange} />
                       <input className="row" type="submit" value="Search"  />
