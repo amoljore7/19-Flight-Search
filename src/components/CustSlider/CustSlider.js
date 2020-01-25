@@ -5,23 +5,6 @@ import Slider from 'rc-slider';
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
-const Handle = Slider.Handle;
-const style = { margin: 15 };
-
-const handle = (props) => {
-  const { value, dragging, index, ...restProps } = props;
-  return (
-    <Tooltip
-      prefixCls="rc-slider-tooltip"
-      overlay={value}
-      visible={dragging}
-      placement="top"
-      key={index}
-    >
-      <Handle {...restProps} />
-    </Tooltip>
-  );
-};
 
 class CustSlider extends React.Component {
   constructor(props) {
@@ -33,14 +16,6 @@ class CustSlider extends React.Component {
     };
   }
     
-  onLowerBoundChange = (e) => {
-    this.setState({ lowerBound: +e.target.value });
-  }
-
-  onUpperBoundChange = (e) => {
-    this.setState({ upperBound: +e.target.value });
-  }
-
   onSliderChange = (value) => {
     if (typeof this.props.onChange === 'function') {
         this.props.onChange({lowerBound: value[0]*100, upperBound: value[1]*100});
@@ -50,14 +25,10 @@ class CustSlider extends React.Component {
     });
   }
 
-  handleApply = () => {
-    const { lowerBound, upperBound } = this.state;
-    this.setState({ value: [lowerBound, upperBound] });
-  }
 
   render() {
     return (
-      <div style={style}>
+      <div style={{ margin: 15 }}>
         <Range allowCross={false} value={this.state.value} onChange={this.onSliderChange}  tipFormatter={value => `${value*100}`} />
       </div>
     );
