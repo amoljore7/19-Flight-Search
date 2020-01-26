@@ -1,7 +1,8 @@
 {
-  "name": "flight-search-engiine",
+  "name": "flight-search",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://amoljore7.github.io/19-Flight-Search/",
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
@@ -15,6 +16,8 @@
     "react-datepicker": "^0.44.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
