@@ -20,7 +20,8 @@ class App extends Component {
       deptDate: '',
       retDate: '',
       passengerCount: 1,
-      items: [],
+      items: items,
+      active:0
     };
     moment.updateLocale('en', {
       calendar: {
@@ -40,6 +41,7 @@ class App extends Component {
     if (res) {
       console.log("Data Feched Succesfully")
       this.setState({
+        active:1,
         items: res,
       })
     } else {
@@ -57,7 +59,7 @@ class App extends Component {
       destCity: this.state.destCity
     };
 
-    let filteredData = this.findByMatchingProperties(this.state.items, objToMatch);
+    let filteredData = this.findByMatchingProperties(items, objToMatch);
     filteredData = filteredData.filter(this.filterByPrice);
     this.setState({
       items: filteredData
@@ -73,7 +75,7 @@ class App extends Component {
       originCity: event.target.value
     };
 
-    const filteredData = this.findByMatchingProperties(this.state.items, objToMatch);
+    const filteredData = this.findByMatchingProperties(items, objToMatch);
     if (filteredData.length !== 0) {
       this.setState({
         originCity: event.target.value,
@@ -147,7 +149,7 @@ class App extends Component {
 
     return (
       <span>
-        {this.state.items.length ?
+        {this.state.active === 1 ?
           <div className="App">
             <div className="App-header">
               <h2>Flight Search</h2>
@@ -224,9 +226,10 @@ class App extends Component {
             </div>
           </div>
           :
-          <div className="App">
+          <div className="App" style={{ background: '#262626' }}>
             <div className="App-header">
-              <h2 style={{ color: 'red' }}>Wait Data Feching In Process ...</h2>
+              <h2 style={{ color: 'red' }}>Wait Data Feching In Process ...
+              </h2>
             </div></div>}
       </span>
     );
