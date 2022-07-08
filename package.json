@@ -10,7 +10,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-tabs": "^0.8.2",
-    "moment": "^2.16.0",
+    "moment": "^2.29.4",
     "prop-types": "^15.5.8",
     "rc-slider": "^7.0.1",
     "react-datepicker": "^0.44.0"
