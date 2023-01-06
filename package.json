@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://amoljore7.github.io/19-Flight-Search/",
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "5.0.1"
   },
   "dependencies": {
     "react": "^15.5.4",
