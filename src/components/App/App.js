@@ -31,21 +31,22 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(APIConfig.configUrl.flight_get_data, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'Application/JSON'
-      },
-    })
-    const res = await response.json();
+    // const response = await fetch(APIConfig.configUrl.flight_get_data, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'Application/JSON'
+    //   },
+    // })
+    // const res = await response.json();
+    const res = items;
     if (res) {
-      console.log("Data Feched Succesfully")
+      console.log("Data Fetched Successfully")
       this.setState({
         active:1,
         items: res,
       })
     } else {
-      alert("Data Not Feched...")
+      alert("Data Not Fetched...")
     }
   }
   handleChangeSlider = (obj) => {
@@ -228,7 +229,7 @@ class App extends Component {
           :
           <div className="App" style={{ background: '#262626' }}>
             <div className="App-header">
-              <h2 style={{ color: 'red' }}>Wait Data Feching In Process ...
+              <h2 style={{ color: 'red' }}>Data Fetching In Process ...
               </h2>
             </div></div>}
       </span>
